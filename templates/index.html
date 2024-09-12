@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página del Artista</title>
+    <!-- Link para la fuente Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+     <!-- Barra de menú flotante -->
+     <nav class="navbar">
+        <img src="{{ url_for('static', filename='images/jazz_musician3.png') }}" alt="Logo del Artista" class="logo">
+        <div class="menu-toggle" id="menu-toggle">
+            &#9776;
+        </div>
+        <ul class="menu" id="menu">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('bio') }}">Bio</a></li>
+            <li><a href="{{ url_for('media') }}">Media</a></li>
+            <li><a href="{{ url_for('news') }}">News</a></li>
+            <li><a href="{{ url_for('store') }}">Store</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Imagen de fondo -->
+    <div class="background-image"></div>
+
+    <!-- Imagen decorativa en el cuadrante superior derecho -->
+    <div class="quadrant-image">
+        <img src="{{ url_for('static', filename='images/jazz_musician2.png') }}" alt="Jazz Musician">
+    </div>
+
+    <!-- Sección principal -->
+    <section class="main-content">
+        <h1></h1>
+        <p></p>
+    </section>
+
+    <!-- Sección de Apple Music -->
+    <section class="apple-music">
+        <h2>Listen on Apple Music</h2>
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/mx/album/primordia/1601246074"></iframe>
+    </section>
+
+    <main>
+        <!-- Aquí puedes añadir más contenido -->
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

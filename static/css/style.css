@@ -1,0 +1,186 @@
+/* Estilos globales */
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #302f2f; /* Fondo oscuro predeterminado */
+    overflow-x: hidden; /* Evitar el scroll horizontal */
+}
+
+/* Imagen de fondo */
+.background-image {
+    position: fixed; /* Cambiado a fixed para que cubra toda la página */
+    top: 0;
+    left: 0;
+    width: 100%; /* Asegura que la imagen cubra todo el ancho */
+    height: 100%; /* Asegura que la imagen cubra todo el alto */
+    background-image: url("../images/jazz_musician1.JPEG");
+    background-size: cover;
+    background-position: center; /* Centra la imagen */
+    z-index: -1; /* Colocar la imagen detrás de todo el contenido */
+    opacity: 0.85;
+}
+
+/* Barra de menú flotante */
+.navbar {
+    position: fixed;
+    top: 10px; /* Ajuste para el espacio en la parte superior */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #302f2f;
+    border-radius: 20px;
+    padding: 12px 20px; /* Ajuste del tamaño de la barra de menú */
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: calc(100% - 40px); /* Asegura que la barra de menú no se salga del borde de la pantalla */
+    max-width: 1200px; /* Limita el ancho máximo para pantallas grandes */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center; /* Alinea verticalmente el logo y el menú */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    margin-bottom: 50px; /* Espacio debajo de la barra de menú */
+}
+
+/* Logo en la barra de menú */
+.logo {
+    height: 30px; /* Ajustar según el tamaño del logo */
+    margin-right: 20px; /* Espacio entre el logo y el menú */
+}
+
+/* Botón de menú */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color:white;
+    margin-right: 20px; /* Espacio entre el botón de menú y el logo */
+}
+
+/* Menu desplegable */
+.menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    flex-grow: 1; /* Permite que el menú ocupe el espacio disponible */
+    justify-content: center; /* Centra los elementos en el menú */
+}
+
+.menu.active {
+    display: flex;
+}
+
+/* Elementos del menú */
+.menu li {
+    display: inline;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px; /* Ajuste de tamaño de fuente */
+    padding: 8px 12px; /* Ajuste del tamaño del padding */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu li a:hover {
+    background-color: white;
+    color: #302f2f;
+    border-radius: 10px;
+}
+
+/* Imagen decorativa en el cuadrante superior derecho */
+.quadrant-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120%; /* Ajustar el tamaño para pantallas más pequeñas */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.quadrant-image img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Sección principal */
+.main-content {
+    text-align: center;
+    padding: 200px 20px; /* Espacio alrededor del contenido principal */
+    margin-top: 60px; /* Ajuste para que el contenido principal no se solape con la barra de menú */
+}
+
+/* Sección de Apple Music */
+.apple-music {
+    text-align: center;
+    padding: 40px 20px; /* Espacio alrededor de la sección de Apple Music */
+    background-color: transparent; /* Eliminar el fondo decorativo */
+    margin: 80px auto; /* Espacio adicional para mover la sección hacia abajo */
+}
+
+.apple-music h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.apple-music iframe {
+    border-radius: 10px;
+    width: 100%; /* Asegura que el iframe ocupe el ancho del contenedor */
+    max-width: 800px; /* Ajusta el ancho máximo según sea necesario */
+    height: 450px; /* Ajusta la altura del iframe según sea necesario */
+}
+
+/* Media Queries para dispositivos pequeños */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px; /* Ajuste del padding para pantallas pequeñas */
+        margin-bottom: 20px; /* Espacio debajo de la barra de menú en pantallas pequeñas */
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Espacio debajo del logo */
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 10px 0; /* Espacio entre los elementos del menú */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .quadrant-image {
+        width: 100%; /* Ajuste para pantallas pequeñas */
+        padding: 10px;
+    }
+
+    .quadrant-image img {
+        width: 100%;
+        height: auto;
+    }
+}

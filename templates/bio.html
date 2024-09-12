@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio del Artista</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Barra de menú flotante -->
+    <nav class="navbar">
+        <img src="{{ url_for('static', filename='images/jazz_musician3.png') }}" alt="Logo del Artista" class="logo">
+        <div class="menu-toggle" id="menu-toggle">
+            &#9776;
+        </div>
+        <ul class="menu" id="menu">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('bio') }}">Bio</a></li>
+            <li><a href="{{ url_for('media') }}">Media</a></li>
+            <li><a href="{{ url_for('news') }}">News</a></li>
+            <li><a href="{{ url_for('store') }}">Store</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Imagen de fondo -->
+    <div class="background-image"></div>
+
+    <!-- Imagen decorativa en el cuadrante superior derecho -->
+    <div class="quadrant-image">
+        <img src="{{ url_for('static', filename='images/jazz_musician2.png') }}" alt="Jazz Musician">
+    </div>
+
+    <!-- Sección principal -->
+    <section class="main-content">
+        <h1>Biografía del Artista</h1>
+        <p>Contenido sobre la biografía del artista...</p>
+    </section>
+
+    <main>
+        <!-- Aquí puedes añadir más contenido si es necesario -->
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
